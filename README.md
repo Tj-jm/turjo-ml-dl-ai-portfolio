@@ -18,6 +18,24 @@ It progresses from fundamental algorithms to advanced applications, including re
 
 ---
 
+# 📂 Project Navigation
+
+Easily browse the portfolio either on my hosted site  
+👉 [turjo-ml-dl.turjo-jaman.com](https://turjo-ml-dl.turjo-jaman.com/)  
+or directly on GitHub.  
+
+| Category           | Hosted Site Link                                                                 | GitHub Repo Link                                                                 |
+|--------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| Classical ML       | [Browse](https://turjo-ml-dl.turjo-jaman.com/classical_ml/)                      | [GitHub](https://github.com/Tj-jm/turjo-ml-dl-portfolio/tree/main/classical_ml) |
+| Neural Networks    | [Browse](https://turjo-ml-dl.turjo-jaman.com/neural_networks/)                   | [GitHub](https://github.com/Tj-jm/turjo-ml-dl-portfolio/tree/main/neural_networks) |
+| Computer Vision    | [Browse](https://turjo-ml-dl.turjo-jaman.com/computer_vision/)                   | [GitHub](https://github.com/Tj-jm/turjo-ml-dl-portfolio/tree/main/computer_vision) |
+| Sequential Models  | [Browse](https://turjo-ml-dl.turjo-jaman.com/sequential_models/)                 | [GitHub](https://github.com/Tj-jm/turjo-ml-dl-portfolio/tree/main/sequential_models) |
+| NLP                | [Browse](https://turjo-ml-dl.turjo-jaman.com/nlp/)                               | [GitHub](https://github.com/Tj-jm/turjo-ml-dl-portfolio/tree/main/nlp) |
+| Applied AI         | [Browse](https://turjo-ml-dl.turjo-jaman.com/applied_ai/)                        | [GitHub](https://github.com/Tj-jm/turjo-ml-dl-portfolio/tree/main/applied_ai) |
+
+---
+
+
 ## ⭐ Flagship Projects
 
 1. **Text Summarization & Quiz Generation with LSTMs**  
