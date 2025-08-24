@@ -91,3 +91,7 @@ pip install -r requirements.txt
 ---
 
 _This portfolio reflects my journey from fundamental ML concepts to applied AI systems, showcasing both research-level innovation and engineering execution._
+
+---
+📜 License: [CC-BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)  
+© 2025 Nur A Jaman. All rights reserved under the terms of this license.
