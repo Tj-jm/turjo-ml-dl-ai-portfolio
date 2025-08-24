@@ -1,0 +1,39 @@
+ml-dl-portfolio/
+│
+├── README.md                  # Main overview (see outline below)
+│
+├── classical_ml/               # Supervised & Unsupervised ML
+│   ├── linear_regression_rent_predictor.ipynb
+│   ├── face_recognition_traditional.ipynb
+│   ├── decision_tree.ipynb
+│   ├── random_forest.ipynb
+│   ├── boosting.ipynb
+│   ├── knn.ipynb
+│   ├── svm.ipynb
+│   ├── naive_bayes.ipynb
+│   ├── clustering.ipynb
+│   ├── pca_theory.ipynb
+│   └── pca_mnist.ipynb
+│
+├── neural_networks/            # Deep Learning basics
+│   ├── nn_iris_data.py
+│   ├── single_layer_nn.ipynb
+│   ├── keras_single_layer.ipynb
+│   ├── deep_neural_network.ipynb
+│   └── cnn_forward_pass.ipynb
+│
+├── computer_vision/            # CV Applications
+│   ├── smile_detection_cnn.ipynb
+│   ├── cifar10_cnn.ipynb
+│   ├── mnist_cnn.ipynb
+│   └── handwritten_digit_classification_pca_svm.ipynb
+│
+├── sequential_models/          # RNNs & Time Series
+│   └── rnn_temperature_forecasting.ipynb
+│
+├── nlp/                        # Natural Language Processing
+│   ├── nlp_basics.ipynb
+│   └── nlp_summarizer_quiz_lstm.ipynb   ⭐ (Flagship)
+│
+├── applied_ai/                 # Flagship Applied Projects
+│   └── bangla_ocr_math_equation.py       ⭐ (Flagship)
