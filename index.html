@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Turjo ML/DL Portfolio</title>
+
   <!-- SEO + Social Media Preview -->
-<meta name="title" content="Turjo Jaman — ML/DL Portfolio">
-<meta name="description" content="A curated collection of Machine Learning and Deep Learning projects, spanning classical ML, computer vision, NLP, time-series, and applied AI systems.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Turjo Jaman — ML/DL Portfolio">
+  <meta name="description" content="A curated collection of Machine Learning and Deep Learning projects, spanning classical ML, computer vision, NLP, time-series, and applied AI systems.">
 
-<!-- Open Graph / Facebook / LinkedIn -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://turjo-ml-dl.turjo-jaman.com/">
-<meta property="og:title" content="Turjo Jaman — Machine Learning & Deep Learning Portfolio">
-<meta property="og:description" content="Explore 20+ ML/DL projects: from linear regression to CNNs, RNNs, NLP summarization, and Bangla OCR with math recognition.">
-<meta property="og:image" content="https://turjo-jaman.com/assets/portfolio-cover.png"> <!-- replace with your hosted image -->
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://turjo-ml-dl.turjo-jaman.com/">
+  <meta property="og:title" content="Turjo Jaman — Machine Learning & Deep Learning Portfolio">
+  <meta property="og:description" content="Explore 20+ ML/DL projects: from linear regression to CNNs, RNNs, NLP summarization, and Bangla OCR with math recognition.">
+  <meta property="og:image" content="https://turjo-jaman.com/assets/portfolio-cover.png">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://turjo-ml-dl.turjo-jaman.com/">
-<meta name="twitter:title" content="Turjo Jaman — ML/DL Portfolio">
-<meta name="twitter:description" content="Explore 20+ ML/DL projects: from theory to applied AI research systems.">
-<meta name="twitter:image" content="https://turjo-jaman.com/assets/portfolio-cover.png"> <!-- replace with your hosted image -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://turjo-ml-dl.turjo-jaman.com/">
+  <meta name="twitter:title" content="Turjo Jaman — ML/DL Portfolio">
+  <meta name="twitter:description" content="Explore 20+ ML/DL projects: from theory to applied AI research systems.">
+  <meta name="twitter:image" content="https://turjo-jaman.com/assets/portfolio-cover.png">
 
   <style>
     body {
@@ -45,18 +47,20 @@
       max-width: 1200px;
       margin: auto;
       padding: 20px;
+      gap: 20px;
+    }
+    .left, .right {
+      padding: 20px;
     }
     .left {
       flex: 1;
-      padding: 20px;
       border-right: 1px solid #ddd;
     }
     .right {
-      flex: 1.5;
-      padding: 20px;
+      flex: 2;
     }
     h2 {
-      font-size: 1.3em;
+      font-size: 1.2em;
       margin-top: 1.2em;
       border-bottom: 1px solid #ddd;
       padding-bottom: 4px;
@@ -86,6 +90,17 @@
       padding: 15px;
       border-top: 1px solid #ccc;
       margin-top: 20px;
+    }
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      .left {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
     }
   </style>
 </head>
@@ -123,11 +138,10 @@
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/classical_ml/knn.ipynb">K-Nearest Neighbors</a></li>
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/classical_ml/SVM.ipynb">Support Vector Machines</a></li>
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/classical_ml/Naive_Bayes.ipynb">Naive Bayes</a></li>
-         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/classical_ml/clustering.ipynb">Clustering</a></li>
+        <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/classical_ml/clustering.ipynb">Clustering</a></li>
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/classical_ml/mnist_pca.ipynb">PCA on MNIST</a></li>
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/classical_ml/PCA.ipynb">PCA Explained</a></li>
       </ul>
-
 
       <h2>II. Neural Networks</h2>
       <ul>
@@ -144,7 +158,6 @@
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/computer_vision/cifr_10.ipynb">CIFAR-10 CNN</a></li>
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/computer_vision/mnist_with_cnn.ipynb">MNIST CNN</a></li>
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/computer_vision/Handwritten_digit_classification.ipynb">Handwritten Digit Classification</a></li>
-        
       </ul>
 
       <h2>IV. Sequential Models</h2>
@@ -155,12 +168,12 @@
       <h2>V. Natural Language Processing</h2>
       <ul>
         <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/nlp/NLP.ipynb">NLP Basics</a></li>
-        <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/nlp/NLP_project.ipynb">Summarization & Quiz Generation</a></li>
+        <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/nlp/NLP_project.ipynb?flush_cache=true">Summarization & Quiz Generation</a></li>
       </ul>
 
       <h2>VI. Applied AI Projects</h2>
       <ul>
-        <li><a href="https://nbviewer.org/github/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/applied_ai/bangla_ocr.py">Bangla OCR + Math Recognition</a></li>
+        <li><a href="https://github.com/Tj-jm/turjo-ml-dl-ai-portfolio/blob/main/applied_ai/bangla_ocr.py">Bangla OCR + Math Recognition</a></li>
       </ul>
     </div>
   </div>
