@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Research Buddy V1.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Georgia", "Times New Roman", serif;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #fdfdfd;
+            color: #222;
+        }
+
+        h1,
+        h2 {
+            margin-top: 1.2em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.2em;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 6px 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .diagram {
+            text-align: center;
+            margin: 30px 0;
+            padding: 10px;
+            border: 2px dashed #888;
+            background: #fafafa;
+        }
+
+        .diagram img {
+            max-width: 100%;
+            /* responsive scaling */
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Research Buddy V1.1</h1>
+
+    <h2>Motivation</h2>
+    <p>The Research Buddy project was born out of a personal need. After stepping away from research for some time, I recently 
+        resumed working in this space and immediately recognized the need for a system to simplify finding papers aligned with my interests. The starting point was an ML-based
+        classifier for paper abstracts, giving me an immediate hint about a paper’s field before I invested time reading
+        it in depth.</p>
+
+    <p>However, my requirements soon expanded. I realized that beyond classification, I also needed summarization and
+        keyword extraction—tools that could provide quick insights into a paper’s content. While free tiers of
+        established LLMs such as Perplexity, ChatGPT, or Gemini exist, they come with limitations: they are fragmented
+        across platforms, and often behind paywalls for extended use. What I sought was an integrated system, built for
+        me, all in one place, without additional cost.</p>
+
+    <p>This motivation pushed me to leverage my system design and full-stack development skills to create a modular
+        full-stack ML/AI application.</p>
+
+    <h2>Research Buddy v1.1 — Current Capabilities</h2>
+    <p>The first official release (v1.1) of Research Buddy is capable of the following:</p>
+    <ul>
+        <li>Abstract Extraction<br>Extract abstracts directly from uploaded PDF research papers.</li>
+        <li>Paper Classification<br>Predict the probable field of a paper using either a single ML/DL model or a
+            comparative graph of multiple models with confidence level, providing transparency in predictions.</li>
+        <li>Keyword Extraction<br>Dual pipeline:<br>Local Transformer model for keyword generation.<br>Gemini LLM (via
+            free API tiers) for high-quality keyword suggestions.<br>Users can compare keywords side by side for better
+            evaluation.</li>
+        <li>Summarization<br>Same dual pipeline approach: Transformer + Gemini LLM.<br>Summaries displayed side by side
+            for direct comparison.</li>
+        <li>User Management & Libraries<br>A robust user authentication and library system.<br>Users can curate personal
+            collections of papers.<br>CRUD operations on papers: upload/save to CDN (e.g., AWS S3), store
+            title/abstract, and attach preferred sets of keywords and summaries.</li>
+    </ul>
+
+    <h2>Design Principles</h2>
+    <ul>
+        <li>Modularity: Both backend and frontend are structured for maintainability. Transformers or LLMs can be
+            swapped out with minimal overhead.</li>
+        <li>Scalability: Backend supports additional ML models and services.</li>
+        <li>User-Centric: Designed first for personal productivity, but extensible to wider research communities.</li>
+    </ul>
+
+    <h2>Technology Stack</h2>
+    <p>Research Buddy v1.1 is built on a modern, modular, and cost-conscious technology stack:</p>
+    <ul>
+        <li>FastAPI — Lightweight asynchronous Python backend framework, serving APIs for classification, summarization,
+            keywords, and CRUD operations.</li>
+        <li>React — Component-driven frontend with Material UI for a clean, responsive user interface.</li>
+        <li>MongoDB — NoSQL database to store user accounts, libraries, paper metadata, abstracts, keywords, and
+            summaries.</li>
+        <li>CDN (AWS S3 + CloudFront) — Reliable storage and global distribution of uploaded PDFs and related assets.
+        </li>
+        <li>Gemini API — Integrated LLM for keyword and summary generation (leveraging free tiers; no vendor lock-in).
+        </li>
+        <li>Kaggle & Google Colab — Cloud-based GPU environments for training and experimentation with ML/DL models.
+        </li>
+        <li>MLflow — Framework for model lifecycle management (MLOps), enabling experiment tracking, versioning, and
+            reproducibility across models.</li>
+        <li>Local Transformers (Hugging Face) — Integrated for on-device keyword extraction and summarization, ensuring
+            independence from external APIs and providing a fallback option alongside Gemini.</li>
+    </ul>
+    <p><strong>Rationale:</strong><br>This stack balances low cost, flexibility, and scalability. Free-tier services
+        (Gemini, Colab, Kaggle) lower experimentation costs, while MLflow and modular APIs ensure smooth upgrades when
+        swapping or retraining models. AWS S3 + CloudFront provide reliable content delivery, while MongoDB ensures
+        dynamic user data handling.</p>
+
+    <div class="diagram">
+        <figure>
+            <img src="./assets/research_buddy_v1.jpg" alt="Research Buddy Architecture">
+            <figcaption>Figure 1: Research Buddy v1.1 architecture showing backend, frontend, and ML/LLM pipelines
+            </figcaption>
+        </figure>
+    </div>
+
+    <h2>Future Development</h2>
+    <ul>
+        <li>
+            <strong>Conversational Features</strong><br>
+            An open-source LLM is being fine-tuned for an integrated conversational feature.
+            Users will be able to interact directly with a particular paper, with dialogue grounded in the document.
+        </li>
+        <li>
+            <strong>Retrieval-Augmented Generation (RAG)</strong><br>
+            The dialogue will leverage RAG, ensuring context-aware and document-specific responses.
+        </li>
+        <li>
+            <strong>AI Agent Mode — Research Adviser</strong><br>
+            A complete AI Agent mode is envisioned as a <em>Research Adviser</em>, unifying existing modules:
+            <ul>
+                <li>Classification</li>
+                <li>Summarization</li>
+                <li>Keyword extraction</li>
+                <li>Comparison</li>
+            </ul>
+            Enhanced with upgraded features and proactive guidance.
+        </li>
+    </ul>
+
+
+    <h2>Case Study: Model Training and Dataset</h2>
+    <p>For this project, I initially started with the entire arXiv dataset. However, due to the very limited
+        computational capacity of my laptop and the restrictions of free-tier cloud resources, training quickly became
+        impractical and nearly impossible. This resource bottleneck was a major pain point of the project.</p>
+    <p>To mitigate this, I created a Computer Science–specific subset of the arXiv data, focusing on five categories
+        most closely aligned with my research interests:</p>
+    <ul>
+        <li>cs.CV – Computer Vision</li>
+        <li>cs.CL – Computation and Language</li>
+        <li>cs.IT / math.IT – Information Theory</li>
+        <li>cs.LG – Machine Learning</li>
+        <li>cs.RO – Robotics</li>
+    </ul>
+    <p>This reduced dataset made it feasible to train multiple models and run comparative evaluations.</p>
+
+    <h2>Model Comparison Evaluation</h2>
+    <p>To illustrate, a randomly selected abstract from the dataset (Index 387, true category cs.CL) was classified
+        across eight different models.</p>
+    <p> Abstract (excerpt):<br> Current task-oriented dialog (TOD) systems mostly manage structured knowledge (e.g.
+        databases and tables) to guide goal-oriented conversations. However, they fall short of handling dialogs which
+        also involve unstructured knowledge...</p>
+    <p> True Category: cs.CL</p>
+    <p> Model Predictions:</p>
+
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>SVM</td>
+            <td>cs.CL</td>
+            <td>N/A</td>
+            <td>Correct prediction; lacks probability output</td>
+        </tr>
+        <tr>
+            <td>Multinomial NB</td>
+            <td>cs.CL</td>
+            <td>0.8139</td>
+            <td>Correct; strong performance with sparse token counts</td>
+        </tr>
+        <tr>
+            <td>Random Forest</td>
+            <td>cs.CL</td>
+            <td>0.8700</td>
+            <td>Correct; solid probabilistic confidence</td>
+        </tr>
+        <tr>
+            <td>AdaBoost</td>
+            <td>cs.CL</td>
+            <td>0.2036</td>
+            <td>Correct but very low confidence; consistent with log-odds limitations</td>
+        </tr>
+        <tr>
+            <td>KNN</td>
+            <td>cs.CL</td>
+            <td>0.9412</td>
+            <td>Correct; very confident, strong discriminative power in TF-IDF space</td>
+        </tr>
+        <tr>
+            <td>Feedforward NN</td>
+            <td>cs.CL</td>
+            <td>0.9945</td>
+            <td>Correct; highest confidence; dense input works effectively</td>
+        </tr>
+        <tr>
+            <td>XGBoost</td>
+            <td>cs.RO</td>
+            <td>0.4780</td>
+            <td>Incorrect; confidence near random threshold</td>
+        </tr>
+        <tr>
+            <td>BiLSTM</td>
+            <td>cs.CL</td>
+            <td>0.8149</td>
+            <td>Correct; captures token context effectively</td>
+        </tr>
+    </table>
+
+    <h2>Observations</h2>
+    <ul>
+        <li>7 out of 8 models correctly classified the abstract as cs.CL.</li>
+        <li>The only incorrect prediction came from XGBoost, which misclassified the paper as cs.RO.</li>
+        <li>Feedforward NN and KNN gave the most confident correct predictions.</li>
+        <li>BiLSTM performed comparably well despite requiring sequential tokenization.</li>
+        <li>AdaBoost often predicted correctly but with low confidence, a recurring limitation.</li>
+        <li>SVM classified correctly but lacks probability scores, limiting its use in confidence-based workflows.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <ul>
+        <li>Traditional models (e.g., Random Forest, Multinomial NB) still perform reliably on structured TF-IDF inputs.
+        </li>
+        <li>Deep learning models (Feedforward NN, BiLSTM) deliver superior accuracy and confidence on clean dense
+            representations or sequential inputs.</li>
+        <li>XGBoost proved less suitable for this task, likely due to its inability to capture semantic and sequential
+            relationships in natural language.</li>
+    </ul>
+    <p>This evaluation demonstrates that even with a reduced dataset, the system effectively serves its intended
+        purpose: providing quick, comparative classification results to guide paper exploration. However, to train a
+        generalized, field-wide classifier, much larger resources and more comprehensive data would be necessary.</p>
+
+</body>
+
+</html>
